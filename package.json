@@ -1,7 +1,7 @@
 {
   "name": "react-native-redux-boilerplate-rn",
-  "version": "0.0.1",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
   "main": "./src/index.js",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
