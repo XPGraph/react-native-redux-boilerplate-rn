@@ -3,6 +3,8 @@ React Native App with tools and settings
 
 ## Quick start
 
+`React Native Getting Started`(https://facebook.github.io/react-native/docs/getting-started)
+
 Choose one of the following options:
 
 - Clone the git repo — `git clone
