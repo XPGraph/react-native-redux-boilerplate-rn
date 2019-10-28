@@ -1,22 +1,22 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
-import { ExampleComponent } from 'components';
+import {View, Text, StyleSheet, Button} from 'react-native';
 import {connect} from 'react-redux';
-import { setToken } from 'redux/actions';
+import {setToken} from '../../redux/actions';
+import {ExampleComponent} from '../../components/example/example';
 
 class SecondScreen extends React.Component {
-    _onPress = () => {
-      this.props.testDispatch(Math.random().toString());
-    }
-    render () {
-      return (
-        <View style={styles.container}>
-          <Text>Second Screen: {this.props.token}</Text>
-          <ExampleComponent/>
-          <Button title={'Test Redux'} onPress={this._onPress}/>
-        </View>
-      );
-    }
+  _onPress = () => {
+    this.props.testDispatch(Math.random().toString());
+  };
+  render () {
+    return (
+      <View style={styles.container}>
+        <Text>Second Screen: {this.props.token}</Text>
+        <ExampleComponent />
+        <Button title={'Test Redux'} onPress={this._onPress} />
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -27,16 +27,19 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return state;
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    testDispatch: (text) => {
+    testDispatch: text => {
       dispatch(setToken(text));
     },
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SecondScreen);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(SecondScreen);
